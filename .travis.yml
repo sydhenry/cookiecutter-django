@@ -9,8 +9,6 @@ language: python
 python:
   - "3.4"
 install:
-  - "pip install hitch"
-  - "cd tests"
-  - "hitch init"
+  - "pip install coverage"
 script:
-  - "hitch test . --extra '{\"xvfb\":true, \"pause_on_failure\":false}'"
+  - "coverage run manage.py test"
