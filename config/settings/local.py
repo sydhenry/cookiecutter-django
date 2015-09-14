@@ -51,6 +51,14 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TEMPLATE_CONTEXT': True,
 }
 
+
+# ROLLBAR CONFIG WITH BRANCH GRAB
+# ------------------------------------------------------------------------------
+from subprocess import Popen, PIPE
+conn = Popen(["git", "rev-parse", "--symbolic-full-name", "--abbrev-ref", "HEAD"],stdout=PIPE)
+branch = bytes.decode(conn.stdout.read(), 'utf-8').strip()
+ROLLBAR['branch'] = branch
+
 # django-extensions
 # ------------------------------------------------------------------------------
 INSTALLED_APPS += ('django_extensions', )
