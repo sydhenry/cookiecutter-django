@@ -58,6 +58,7 @@ from subprocess import Popen, PIPE
 conn = Popen(["git", "rev-parse", "--symbolic-full-name", "--abbrev-ref", "HEAD"],stdout=PIPE)
 branch = bytes.decode(conn.stdout.read(), 'utf-8').strip()
 ROLLBAR['branch'] = branch
+ROLLBAR['enviroment'] = 'development'
 
 # django-extensions
 # ------------------------------------------------------------------------------
@@ -68,3 +69,6 @@ INSTALLED_APPS += ('django_extensions', )
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Your local stuff: Below this line define 3rd party library settings
+
+# must be last
+MIDDLEWARE_CLASSES += ('rollbar.contrib.django.middleware.RollbarNotifierMiddleware',)

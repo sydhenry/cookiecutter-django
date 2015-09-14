@@ -64,12 +64,11 @@ MIDDLEWARE_CLASSES = (
 
 # ROLLBAR CONFIGURATION
 # ------------------------------------------------------------------------------
-MIDDLEWARE_CLASSES += ('rollbar.contrib.django.middleware.RollbarNotifierMiddleware',)
 ROLLBAR = {
     'access_token': env('ROLLBAR_ACCESS_TOKEN'),
     'environment': 'production',
     'branch': 'master',
-    'root': '../../',
+    'root': ROOT_DIR,
 }
 
 # MIGRATIONS CONFIGURATION
