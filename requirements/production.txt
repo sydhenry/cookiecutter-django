@@ -15,6 +15,6 @@ Collectfast==0.2.3
 
 # Mailgun Support
 # ---------------
-django-mailgun-redux>=0.5.0
+django-mailgun>=0.5.0
 
 
