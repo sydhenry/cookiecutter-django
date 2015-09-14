@@ -1,0 +1,3 @@
+[run]
+include = cookiecutter-django/*
+omit = *migrations*
