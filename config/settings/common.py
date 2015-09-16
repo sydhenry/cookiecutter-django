@@ -62,6 +62,15 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+# ROLLBAR CONFIGURATION
+# ------------------------------------------------------------------------------
+ROLLBAR = {
+    'access_token': env('ROLLBAR_ACCESS_TOKEN'),
+    'environment': 'production',
+    'branch': 'master',
+    'root': str(ROOT_DIR),
+}
+
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
