@@ -78,6 +78,10 @@ You can now run the ``runserver_plus`` command::
 
 Open up your browser to http://127.0.0.1:8000/ to see the site running locally.
 
+
+for heroku
+heroku buildpacks:set https://github.com/heroku/heroku-buildpack-python
+
 Setting Up Your Users
 ^^^^^^^^^^^^^^^^^^^^^
 
